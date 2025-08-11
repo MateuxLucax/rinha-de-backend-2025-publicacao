@@ -8,32 +8,31 @@
  Container api-1  Creating
  Container worker-1  Creating
  Container worker-2  Created
- Container api-2  Created
  Container api-1  Created
  Container worker-1  Created
+ Container api-2  Created
  Container haproxy  Creating
  Container haproxy  Created
 Attaching to api-1, api-2, haproxy, valkey, worker-1, worker-2
-valkey  | 1:M 11 Aug 2025 23:12:46.830 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
-valkey  | 1:M 11 Aug 2025 23:12:46.830 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
-valkey  | 1:M 11 Aug 2025 23:12:46.830 * Valkey version=8.1.3, bits=64, commit=00000000, modified=0, pid=1, just started
-valkey  | 1:M 11 Aug 2025 23:12:46.830 * Configuration loaded
-valkey  | 1:M 11 Aug 2025 23:12:46.831 * monotonic clock: POSIX clock_gettime
-valkey  | 1:M 11 Aug 2025 23:12:46.831 * Running mode=standalone, port=6379.
-valkey  | 1:M 11 Aug 2025 23:12:46.832 * Server initialized
-valkey  | 1:M 11 Aug 2025 23:12:46.835 * Creating AOF base file appendonly.aof.1.base.rdb on server start
-valkey  | 1:M 11 Aug 2025 23:12:46.841 * Creating AOF incr file appendonly.aof.1.incr.aof on server start
-valkey  | 1:M 11 Aug 2025 23:12:46.841 * Ready to accept connections tcp
-worker-1  | ⚙️ Starting worker...
+valkey  | 1:M 11 Aug 2025 23:49:21.787 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+valkey  | 1:M 11 Aug 2025 23:49:21.787 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+valkey  | 1:M 11 Aug 2025 23:49:21.787 * Valkey version=8.1.3, bits=64, commit=00000000, modified=0, pid=1, just started
+valkey  | 1:M 11 Aug 2025 23:49:21.787 * Configuration loaded
+valkey  | 1:M 11 Aug 2025 23:49:21.788 * monotonic clock: POSIX clock_gettime
+valkey  | 1:M 11 Aug 2025 23:49:21.789 * Running mode=standalone, port=6379.
+valkey  | 1:M 11 Aug 2025 23:49:21.789 * Server initialized
+valkey  | 1:M 11 Aug 2025 23:49:21.796 * Creating AOF base file appendonly.aof.1.base.rdb on server start
+valkey  | 1:M 11 Aug 2025 23:49:21.805 * Creating AOF incr file appendonly.aof.1.incr.aof on server start
+valkey  | 1:M 11 Aug 2025 23:49:21.805 * Ready to accept connections tcp
 worker-2  | ⚙️ Starting worker...
-worker-2  | 🩺 Health Check Leader: null Current PID: 1opjgejlgjso
-worker-1  | 🩺 Health Check Leader: null Current PID: 1ndnxylscz0c
+worker-2  | 🩺 Health Check Leader: null Current PID: 19mu682z4jcw
 worker-2  | ✅ Processor health check initialized.
-worker-1  | ✅ Processor health check initialized.
-worker-1  | ✅ Worker initialized.
 worker-2  | ✅ Worker initialized.
-api-1     | 🦊 Server is running on http://localhost:9999
+worker-1  | ⚙️ Starting worker...
+worker-1  | 🩺 Health Check Leader: 19mu682z4jcw Current PID: 1n26n2nkwbmr
+worker-1  | ✅ Worker initialized.
 api-2     | 🦊 Server is running on http://localhost:9999
+api-1     | 🦊 Server is running on http://localhost:9999
 haproxy   | [NOTICE]   (1) : New worker (8) forked
 haproxy   | [NOTICE]   (1) : Loading success.
 haproxy   | [NOTICE]   (1) : haproxy version is 2.9.15-e872a3f
@@ -44,13 +43,13 @@ haproxy   | [WARNING]  (8) : Proxy services stopped (cumulated conns: FE: 0, BE:
 haproxy   | [WARNING]  (1) : Current worker (8) exited with code 0 (Exit)
 haproxy   | [WARNING]  (1) : All workers exited. Exiting... (0)
 [Khaproxy exited with code 0
-[Kapi-1 exited with code 137
-[Kapi-2 exited with code 137
 [Kworker-2 exited with code 137
 [Kworker-1 exited with code 137
-valkey    | 1:signal-handler (1754954055) Received SIGTERM scheduling shutdown...
-valkey    | 1:M 11 Aug 2025 23:14:15.180 * User requested shutdown...
-valkey    | 1:M 11 Aug 2025 23:14:15.180 * Calling fsync() on the AOF file.
-valkey    | 1:M 11 Aug 2025 23:14:15.180 * Saving the final RDB snapshot before exiting.
-valkey    | 1:M 11 Aug 2025 23:14:15.188 * DB saved on disk
-valkey    | 1:M 11 Aug 2025 23:14:15.188 # Valkey is now ready to exit, bye bye...
+[Kapi-1 exited with code 137
+[Kapi-2 exited with code 137
+valkey    | 1:signal-handler (1754956247) Received SIGTERM scheduling shutdown...
+valkey    | 1:M 11 Aug 2025 23:50:47.104 * User requested shutdown...
+valkey    | 1:M 11 Aug 2025 23:50:47.104 * Calling fsync() on the AOF file.
+valkey    | 1:M 11 Aug 2025 23:50:47.104 * Saving the final RDB snapshot before exiting.
+valkey    | 1:M 11 Aug 2025 23:50:47.110 * DB saved on disk
+valkey    | 1:M 11 Aug 2025 23:50:47.110 # Valkey is now ready to exit, bye bye...
